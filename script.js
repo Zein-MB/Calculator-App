@@ -26,20 +26,9 @@ btns.forEach((btn) => {
 })
 
 equal.onclick = () => {
-    let operator = calcOperation.textContent.toString().split('').filter((el) => {
-        return el == operators[0] || el == operators[1] || el == operators[2] || el == operators[3]
-    }).join('');
-    // let numOne = calcOperation.textContent.slice(0, calcOperation.textContent.toString().split('').indexOf(operator));
-    // let numTwo = calcOperation.textContent.slice(calcOperation.textContent.toString().split('').indexOf(operator) + 1);
-
-    // if (operator == '+') {
-    //     finalResult.textContent = (Number(numOne) + Number(numTwo));
-    // } else if (operator == '-') {
-    //     finalResult.textContent = (Number(numOne) - Number(numTwo));
-    // } else if (operator == '*') {
-    //     finalResult.textContent = (Number(numOne) * Number(numTwo));
-    // } else if (operator == '/') {
-    //     finalResult.textContent = (Number(numOne) / Number(numTwo));
-    // }
-    finalResult.innerText = (eval(calcOperation.textContent)).toFixed(5);
+    if (calcOperation.textContent % 2 === 0) {
+        finalResult.innerText = (eval(calcOperation.textContent)).toFixed(0);    
+    } else {
+        finalResult.innerText = (eval(calcOperation.textContent)).toFixed(5);
+    }
 }
