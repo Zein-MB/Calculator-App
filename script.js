@@ -26,8 +26,8 @@ btns.forEach((btn) => {
 })
 
 equal.onclick = () => {
-    if (calcOperation.textContent % 2 === 0) {
-        finalResult.innerText = (eval(calcOperation.textContent)).toFixed(0);    
+    if ((eval(calcOperation.textContent)) % 2 === 0) {
+        finalResult.innerText = parseInt(eval(calcOperation.textContent));
     } else {
         finalResult.innerText = (eval(calcOperation.textContent)).toFixed(5);
     }
